@@ -7,7 +7,7 @@ Homepage
 2 player, against simple AI
 
 #2.0
-2 player using sockets?
+2 player using sockets
 
 #
 #
