@@ -1,6 +1,6 @@
 #loveLetter
 
-Web app inspired by the card game Love Letter by AEG games using JavaScript and the MEAN stack
+Web app inspired by the card game Love Letter using JavaScript and the MEAN stack
 
 #1.0
 Homepage
