@@ -1,0 +1,99 @@
+
+/*from https://www.freecreatives.com/textures/parchment-texture.html*/
+body {
+  background-color: #3368B1;
+  /*background-image: url("../images/Old-Parchment-Texture.jpg");*/
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Grunge-Parchment-Paper-Texture.jpg");
+  background-size: cover;
+}
+
+
+.navbar {
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Blue-Parchment-Texture.jpg");
+  background-size: cover;
+  border-bottom: 5px solid #3368B1;
+  color: white;
+}
+
+.nav-text {
+  font-size: 20px;
+  color: white;
+}
+
+.container {
+  position: relative;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/02/Blue-Parchment-Texture.jpg");
+  background-size: cover;
+  color: white;
+  border: none;
+  padding: 50px;
+  top: 20px;
+  box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+}
+
+.title {
+  color: white;
+}
+
+.card {
+  height: 250px;
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  top: 100px;
+  box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.facedown {
+  background-color: purple;
+  color: white;
+}
+
+.faceup {
+  background-size: contain;
+  color: white;
+}
+
+.played {
+  background-image: url('../images/janietree.jpg');
+}
+
+.me {
+}
+
+#deck {
+  box-shadow:
+  0 0 0 10px hsl(0, 0%, 50%),
+  0 0 0 15px hsl(0, 0%, 60%),
+  0 0 0 20px hsl(0, 0%, 70%),
+  0 0 0 25px hsl(0, 0%, 80%),
+  0 0 0 30px hsl(0, 0%, 90%);
+}
+
+
+#current {
+  background-image: url('../images/daliatree.jpg');
+}
+
+#drawn {
+  background-image: url('../images/cristaltree.jpg');
+}
+
+#navbar a:link,
+#navbar a:visited {
+  color: white;
+}
+
+#navbar a:hover {
+  color: orange;
+}
+
+#navbar li {
+  color: white;
+}
+
+#navbar a:hover {
+  background-color: blue;
+}

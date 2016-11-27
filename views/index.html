@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Letter</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="/bower_components/bootswatch-dist/css/bootstrap.min.css"> -->
+
+  <!-- Angular and angular-ui-router Scripts -->
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- Bootstrap scripts and jquery script (used by bootstrap) -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="/bower_components/bootswatch-dist/js/bootstrap.min.js"></script> -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- Formly Dependencies -->
+  <script src="/bower_components/api-check/dist/api-check.js"></script>
+  <script src="/bower_components/angular-formly/dist/formly.js"></script>
+  <script src="/bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+
+
+  <!-- Sweet Alert Dependencies -->
+  <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/bower_components/sweetalert/dist/sweetalert.css">
+
+  <script src="/js/module.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/services.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app='routerApp' ng-controller='navCtrl'>
+
+  <nav id='navbar' class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header navbar-text">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Welcome {{currentUser.username}}!</a>
+      </div>
+
+      <div class="collapse navbar-collapse nav-text" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref='home'>Home <span class="sr-only">(current)</span></a></li>
+          <!--show these links only if there is a user logged in ng-if=user -->
+          <li><a ng-if="currentUser" ui-sref='profile'>Profile</a></li>
+          <li><a ng-if="currentUser" ng-click='logout()'>Logout</a></li>
+
+          <!-- show these links to everyone -->
+          <li><a ui-sref='list'>List</a></li>
+
+          <!-- show these links if there is no user logged in ng-hide=user-->
+          <li><a ng-hide="currentUser" ui-sref='login'>Login</a></li>
+          <li><a ng-hide="currentUser" ui-sref='register'>Register</a></li>
+
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-brand" href="#">Brand</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <div class="container">
+
+
+    <ui-view></ui-view>
+
+  </div>
+</body>
+</html>

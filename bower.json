@@ -1,0 +1,31 @@
+{
+  "name": "striple-storefront",
+  "authors": [
+    "dlzn <dlznsites@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-bootstrap": "^1.3.2",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "angular-ui-router": "ui-router#^0.3.0",
+    "bootswatch-dist": "lumen",
+    "angular-formly": "^8.2.1",
+    "angular-formly-templates-bootstrap": "^6.3.2",
+    "api-check": "^7.5.5",
+    "sweetalert": "^1.1.3"
+  },
+  "resolutions": {
+    "angular": "1.5.5"
+  }
+}
