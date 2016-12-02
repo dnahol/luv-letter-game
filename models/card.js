@@ -11,10 +11,15 @@ var cardSchema = new mongoose.Schema({
   image: { type: String }
 });
 
+
+
+
+
 //discard card (mark as position: 'played'), place face up in played area
 cardSchema.methods.discard = function(cb) {
-  Card.findByIdAndUpdate(this._id, { position: 'played' }, (err, card))
-  cb(null, card)
+  Card.findByIdAndUpdate(this._id, { position: 'played' }, (err, card) => {
+    cb(null, card)
+  });
 }
 
 // draw card, hand limit 2, updates position field accordingly
@@ -34,7 +39,7 @@ cardSchema.statics.draw = function(player, cb) {
     } else {
       drawNum = 2;
     }
-// TODO: error catch for end of deck
+    // TODO: error catch for end of deck
     Card.find({'position': 'deck'}, (err, cards) => {
       var index = randomInt(0,(cards.length-1));
       var cardId = cards[index]._id;
@@ -44,7 +49,7 @@ cardSchema.statics.draw = function(player, cb) {
         cb(null, card);
       });
     });
-  })
+  });
 }
 
 

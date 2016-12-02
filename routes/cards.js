@@ -35,7 +35,7 @@ router.post('/draw',(req, res) => {
 
 //discards a card from hand, leaves faceup in played area
 router.put('/discard',(req, res) => {
-  Card.discard(req.body, (err, card) => {
+  Card.discard((err, card) => {
     res.status(err ? 400 : 200).send(err || card);
   });
 });

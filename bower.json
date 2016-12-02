@@ -1,11 +1,10 @@
 {
-  "name": "striple-storefront",
+  "name": "luv-letter-game",
   "authors": [
     "dlzn <dlznsites@gmail.com>"
   ],
   "description": "",
   "main": "",
-  "license": "MIT",
   "homepage": "",
   "ignore": [
     "**/.*",
