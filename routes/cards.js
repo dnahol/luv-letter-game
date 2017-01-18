@@ -25,7 +25,7 @@ router.post('/deal', (req, res) => {
 });
 
 //draws a card from deck
-//TODO: on Card.draw model method, only shows if current player (i.e. player 1)
+//TODO: on Card.draw model method, only shows card value if current player (i.e. player 1)
 // is the player drawing the card
 router.post('/draw',(req, res) => {
   Card.draw(req.body, (err, card) => {
@@ -34,8 +34,10 @@ router.post('/draw',(req, res) => {
 });
 
 //discards a card from hand, leaves faceup in played area
-router.put('/discard',(req, res) => {
-  Card.discard((err, card) => {
+// TODO: place discarded card face up in played area
+router.post('/discard',(req, res) => {
+  console.log('discard route hit');
+  Card.discard(req.body, (err, card) => {
     res.status(err ? 400 : 200).send(err || card);
   });
 });

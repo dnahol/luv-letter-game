@@ -1,6 +1,7 @@
-#loveLetter
+#luvLetter
 
 Web app inspired by the card game Love Letter using JavaScript and the MEAN stack
+https://luv-letter.herokuapp.com/
 
 #1.0
 Homepage

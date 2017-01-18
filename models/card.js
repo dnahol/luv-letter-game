@@ -11,15 +11,21 @@ var cardSchema = new mongoose.Schema({
   image: { type: String }
 });
 
+cardSchema.statics.discard = function(cardId, cb) {
+  // TODO: error catch for end of deck
+  // TODO: if card left in hand, update postion to hand[playerNum]1
+  // draw card, update position, save
 
-
-
-
-//discard card (mark as position: 'played'), place face up in played area
-cardSchema.methods.discard = function(cb) {
-  Card.findByIdAndUpdate(this._id, { position: 'played' }, (err, card) => {
+  Card.findByIdAndUpdate(cardId.id, { position: 'played' }, (err, card) => {
+    card.simpleDiscard(cb);
     cb(null, card)
   });
+}
+
+//discard card (mark as position: 'played'), return card so it can be placed face up in played area
+cardSchema.methods.simpleDiscard = function() {
+    this.position = 'played';
+    this.save((err) => {});
 }
 
 // draw card, hand limit 2, updates position field accordingly
@@ -28,6 +34,7 @@ cardSchema.methods.discard = function(cb) {
 //is the player drawing the card
 cardSchema.statics.draw = function(player, cb) {
   var restr = 'hand' + player.player + '\\d';
+  // find the correct card position for the card to be drawn
   Card.find({'position': new RegExp(restr)}, (err, handCards) => {
     if(err) return cb(err);
     var drawNum = 0;
@@ -40,6 +47,7 @@ cardSchema.statics.draw = function(player, cb) {
       drawNum = 2;
     }
     // TODO: error catch for end of deck
+    // draw card, update position, save
     Card.find({'position': 'deck'}, (err, cards) => {
       var index = randomInt(0,(cards.length-1));
       var cardId = cards[index]._id;
